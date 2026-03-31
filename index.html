@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PT Jasa Tirta Luhur | Solusi Pengolahan Air Bersih</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+    --primary: #0ea5e9;
+    --primary-dark: #0284c7;
+    --secondary: #0f172a;
+    --accent: #38bdf8;
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --border: rgba(255,255,255,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* NAVIGATION */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    background: rgba(15, 23, 42, 0.98);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.cta-nav {
+    background: var(--primary);
+    color: white !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.cta-nav:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.cta-nav::after {
+    display: none !important;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(30,41,59,0.9) 100%),
+                url('https://images.unsplash.com/photo-1581092919534-6d3c6c8c1f7b?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.4);
+    transform: translateY(-3px);
+}
+
+/* SECTION STYLES */
+section {
+    padding: 5rem 0;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ABOUT SECTION */
+.about {
+    background: linear-gradient(to bottom, var(--bg-dark), #1e293b);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.about-content h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.about-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.feature-list {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.feature-list i {
+    color: var(--accent);
+    font-size: 1.25rem;
+}
+
+/* STATS SECTION */
+.stats-section {
+    background: var(--bg-card);
+    padding: 4rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.stat-value {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.stat-title {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* SERVICES SECTION */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(56, 189, 248, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+}
+
+.service-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* PROJECTS SECTION */
+.projects {
+    background: linear-gradient(to bottom, #1e293b, var(--bg-dark));
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* GAMBAR PROYEK - CARA MENAMPILKAN */
+.project-image {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+/* Overlay efek saat hover */
+.project-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(15,23,42,0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-image::after {
+    opacity: 1;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-tag {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.project-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.project-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.project-meta i {
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+/* CONTACT SECTION */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+}
+
+.contact-info h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.contact-info > p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.contact-details {
+    margin-bottom: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.contact-item i {
+    color: var(--accent);
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    width: 20px;
+}
+
+.contact-item div strong {
+    display: block;
+    color: white;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+}
+
+.contact-item div p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #64748b;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-submit {
+    background: var(--primary);
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-submit:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+footer {
+    background: #020617;
+    border-top: 1px solid var(--border);
+    padding: 3rem 0 1.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand {
+    max-width: 280px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.75rem;
+}
+
+.footer-logo img {
+    height: 35px;
+    width: auto;
+}
+
+.footer-logo span {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+}
+
+.footer-brand p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.footer-links h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.social-links a {
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    .about-grid,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .contact-wrapper {
+        padding: 1.5rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .services-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+    <div class="container navbar">
+        <a href="#" class="logo">
+            <img src="/mnt/kimi/upload/logo-jatiluhur.png.jpeg" alt="Logo">
+            <span>PT Jasa Tirta Luhur</span>
+        </a>
+        
+        <div class="nav-links">
+            <a href="#tentang">Tentang</a>
+            <a href="#layanan">Layanan</a>
+            <a href="#proyek">Proyek</a>
+            <a href="#kontak" class="cta-nav">Hubungi Kami</a>
+        </div>
+        
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                10+ Tahun Pengalaman
+            </div>
+            <h1>Solusi Pengolahan <span>Air Bersih</span> Terpercaya</h1>
+            <p class="hero-description">
+                PT Jasa Tirta Luhur menyediakan teknologi Water Treatment Plant modern untuk mengubah air baku menjadi air bersih berkualitas tinggi.
+            </p>
+            <div class="hero-buttons">
+                <a href="#layanan" class="btn btn-primary">
+                    <i class="fas fa-arrow-right"></i>
+                    Lihat Layanan
+                </a>
+                <a href="#kontak" class="btn btn-outline">
+                    <i class="fas fa-phone"></i>
+                    Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="tentang" class="about">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Tentang Kami</span>
+            <h2 class="section-title">Profesional dalam Pengolahan Air</h2>
+            <p class="section-desc">Komitmen kami menyediakan solusi air bersih berkualitas untuk berbagai sektor.</p>
+        </div>
+        
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1564497978081-2fefb7a3e53a?auto=format&fit=crop&w=1200&q=80" alt="Facility">
+            </div>
+            <div class="about-content">
+                <h3>Water Treatment Plant Modern</h3>
+                <p>PT Jasa Tirta Luhur berfokus pada pengolahan air baku menjadi air bersih melalui sistem WTP yang efisien dan ramah lingkungan.</p>
+                <p>Kami melayani kawasan industri, perumahan, dan fasilitas publik dengan standar kualitas tertinggi.</p>
+                
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i><span>Teknologi pengolahan air mutakhir</span></li>
+                    <li><i class="fas fa-check-circle"></i><span>Tim ahli berpengalaman</span></li>
+                    <li><i class="fas fa-check-circle"></i><span>Standar lingkungan yang ketat</span></li>
+                    <li><i class="fas fa-check-circle"></i><span>Layanan maintenance 24/7</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-project-diagram stat-icon"></i>
+                <div class="stat-value" data-target="4">0</div>
+                <div class="stat-title">Proyek Aktif</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-tint stat-icon"></i>
+                <div class="stat-value" data-target="410">0</div>
+                <div class="stat-title">Kapasitas (Lps)</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-map-marker-alt stat-icon"></i>
+                <div class="stat-value" data-target="4">0</div>
+                <div class="stat-title">Wilayah Operasi</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-calendar-alt stat-icon"></i>
+                <div class="stat-value" data-target="10">0</div>
+                <div class="stat-title">Tahun Pengalaman</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="layanan">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Layanan</span>
+            <h2 class="section-title">Solusi Lengkap Kami</h2>
+            <p class="section-desc">Layanan komprehensif untuk ketersediaan air bersih berkualitas.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-water"></i></div>
+                <h3>Pengolahan Air Baku</h3>
+                <p>Mengolah air baku dari sungai menjadi air bersih sesuai standar.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-industry"></i></div>
+                <h3>Water Treatment Plant</h3>
+                <p>Operasional instalasi dengan teknologi modern.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-recycle"></i></div>
+                <h3>Pengolahan Limbah</h3>
+                <p>Pengolahan air limbah ramah lingkungan.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tools"></i></div>
+                <h3>Maintenance</h3>
+                <p>Pemeliharaan sistem agar tetap optimal.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS SECTION DENGAN GAMBAR -->
+<section id="proyek" class="projects">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Portofolio</span>
+            <h2 class="section-title">Proyek Kami</h2>
+            <p class="section-desc">Proyek pengolahan air di berbagai wilayah Indonesia.</p>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- PROYEK 1: SPAM Marunda -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" alt="SPAM Marunda">
+                </div>
+                <div class="project-content">
+                    <span class="project-tag">SPAM</span>
+                    <h3>SPAM Marunda</h3>
+                    <p>Sistem Penyediaan Air Minum di kawasan Marunda dengan teknologi modern.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-tint"></i> 50 L/detik</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Jakarta</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROYEK 2: SPAM Pamanukan -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1574482620811-1aa16ffe3c82?auto=format&fit=crop&w=800&q=80" alt="SPAM Pamanukan">
+                </div>
+                <div class="project-content">
+                    <span class="project-tag">SPAM</span>
+                    <h3>SPAM Pamanukan</h3>
+                    <p>Instalasi pengolahan air berskala besar untuk melayani ribuan pelanggan.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-tint"></i> 110 L/detik</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Subang</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROYEK 3: Kota Baru Parahyangan -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://drive.google.com/uc?export=view&id=1IJa1r2eNbpg0nHXpfR1mSB7UOrHhf9EF" alt="Kota Baru Parahyangan">
+                </div>
+                <div class="project-content">
+                    <span class="project-tag">Real Estate</span>
+                    <h3>Kota Baru Parahyangan</h3>
+                    <p>Sistem pengolahan air terpadu untuk kawasan perumahan modern.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-tint"></i> 100 L/detik</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Bandung</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROYEK 4: BIKI & Curug -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=800&q=80" alt="BIKI Curug">
+                </div>
+                <div class="project-content">
+                    <span class="project-tag">Industrial</span>
+                    <h3>BIKI & Curug</h3>
+                    <p>Proyek pengolahan air terbesar dalam portofolio perusahaan.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-trophy"></i> Terbesar</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Tangerang</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="kontak">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Kontak</span>
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p class="section-desc">Siap membantu kebutuhan pengolahan air Anda.</p>
+        </div>
+        
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Informasi Kontak</h3>
+                <p>Hubungi kami untuk konsultasi gratis tentang layanan kami.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Alamat</strong>
+                            <p>Jl. Insinyur H. Juanda No.124<br>Bekasi Timur, Jawa Barat</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Telepon</strong>
+                            <p>+62 21 1234 5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>info@jasatirtaluhur.co.id</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Jam Operasional</strong>
+                            <p>Senin - Jumat: 08.00 - 17.00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Jl.+Insinyur+H.+Juanda+No.124+Bekasi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="180"
+                        style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan terkirim.');">
+                <div class="form-group">
+                    <input type="text" placeholder="Nama Lengkap" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Telepon">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Pesan" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i>
+                    Kirim Pesan
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="D:/motor/convert/logo-jatiluhur.png.jpeg" alt="Logo">
+                    <span>PT Jasa Tirta Luhur</span>
+                </div>
+                <p>Perusahaan pengolahan air terpercaya dengan komitmen menyediakan solusi air bersih berkualitas.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#tentang">Tentang</a></li>
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#proyek">Proyek</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">Pengolahan Air</a></li>
+                    <li><a href="#">WTP</a></li>
+                    <li><a href="#">Maintenance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privasi</a></li>
+                    <li><a href="#">Syarat</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 PT Jasa Tirta Luhur. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Counter animation
+const counters = document.querySelectorAll('.stat-value');
+const speed = 200;
+
+const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const inc = target / speed;
+
+    if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(() => animateCounter(counter), 20);
+    } else {
+        counter.innerText = target;
+    }
+};
+
+// Intersection Observer untuk counter
+const observerOptions = {
+    threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const countersInElement = entry.target.querySelectorAll('.stat-value');
+            countersInElement.forEach(counter => animateCounter(counter));
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.stats-section').forEach((el) => {
+    observer.observe(el);
+});
+</script>
+
+</body>
+</html>
