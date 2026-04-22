@@ -442,6 +442,102 @@ section { padding: 6rem 0; }
 }
 .feature-list i { color: var(--accent); font-size: 0.85rem; flex-shrink: 0; }
 
+/* ====== VISI MISI ====== */
+.visi-misi {
+    background: var(--bg-mid);
+    position: relative;
+    overflow: hidden;
+}
+.visi-misi::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(20,184,166,0.06) 0%, transparent 70%);
+    bottom: -100px; left: -150px;
+    pointer-events: none;
+}
+.vm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.vm-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+.vm-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+.vm-card-top-border {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+}
+.vm-card-top-border.blue { background: linear-gradient(90deg, var(--primary), var(--accent)); }
+.vm-card-top-border.teal { background: linear-gradient(90deg, var(--teal), #5eead4); }
+.vm-icon-big {
+    width: 60px; height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+.vm-icon-big.blue {
+    background: rgba(14,165,233,0.12);
+    border: 1px solid rgba(14,165,233,0.25);
+    color: var(--accent);
+}
+.vm-icon-big.teal {
+    background: rgba(20,184,166,0.12);
+    border: 1px solid rgba(20,184,166,0.25);
+    color: var(--teal);
+}
+.vm-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+.vm-card > p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    font-weight: 300;
+}
+.misi-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+.misi-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+.misi-bullet {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(20,184,166,0.12);
+    border: 1px solid rgba(20,184,166,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.misi-bullet i { color: var(--teal); font-size: 0.6rem; }
+
 /* STATS */
 .stats-section {
     background: var(--bg-card);
@@ -557,8 +653,120 @@ section { padding: 6rem 0; }
 }
 .service-card p { color: var(--text-muted); font-size: 0.875rem; line-height: 1.7; font-weight: 300; }
 
+/* ====== MESIN & PERALATAN ====== */
+.mesin-section {
+    background: linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+.mesin-section::before {
+    content: '';
+    position: absolute;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(14,165,233,0.05) 0%, transparent 70%);
+    top: -200px; right: -200px;
+    pointer-events: none;
+}
+.mesin-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.mesin-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    position: relative;
+}
+.mesin-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-hover);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(56,189,248,0.12);
+}
+.mesin-img {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.mesin-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.8) saturate(1.1);
+}
+.mesin-card:hover .mesin-img img { transform: scale(1.07); }
+.mesin-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(7,13,26,0.9) 100%);
+}
+.mesin-badge {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: rgba(7,13,26,0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(56,189,248,0.25);
+    color: var(--accent-light);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.mesin-body { padding: 1.4rem; }
+.mesin-tag {
+    display: inline-block;
+    background: rgba(56,189,248,0.1);
+    color: var(--accent);
+    border: 1px solid rgba(56,189,248,0.2);
+    padding: 0.18rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.65rem;
+}
+.mesin-card h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+.mesin-card p {
+    color: var(--text-muted);
+    font-size: 0.83rem;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+.mesin-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border);
+}
+.mesin-spec {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(56,189,248,0.05);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+.mesin-spec i { color: var(--accent); font-size: 0.7rem; }
+
 /* PROJECTS */
-.projects { background: linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-dark) 100%); }
+.projects { background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-mid) 100%); }
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -841,16 +1049,18 @@ footer {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .stat-card:nth-child(2)::after { display: none; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
+    .mesin-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .mobile-menu { display: block; }
-    .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
+    .about-grid, .contact-wrapper, .vm-grid { grid-template-columns: 1fr; }
     .contact-info { border-right: none; border-bottom: 1px solid var(--border); }
     .projects-grid { grid-template-columns: 1fr; }
     .about-img-badge { bottom: -15px; right: 10px; }
     section { padding: 4rem 0; }
     .form-row { grid-template-columns: 1fr; }
+    .mesin-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
     .hero-buttons { flex-direction: column; }
@@ -878,7 +1088,9 @@ footer {
     </a>
     <div class="nav-links">
       <a href="#tentang">Tentang</a>
+      <a href="#visi-misi">Visi & Misi</a>
       <a href="#layanan">Layanan</a>
+      <a href="#mesin">Mesin</a>
       <a href="#proyek">Proyek</a>
       <a href="#kontak" class="cta-nav">Hubungi Kami</a>
     </div>
@@ -896,9 +1108,6 @@ footer {
   <div class="particles" id="particles"></div>
   <div class="container">
     <div class="hero-content">
-    
-        
-      </div>
       <h1>
         <span class="line">Solusi Pengolahan</span>
         <span class="line highlight">Air Bersih</span>
@@ -936,9 +1145,6 @@ footer {
     <div class="about-grid">
       <div class="about-img-wrap">
         <img src="pengujian air.jpeg" alt="pengujian">
-        <div class>
-
-        </div>
       </div>
       <div class="about-content">
         <span class="tag">Water Treatment Plant Modern</span>
@@ -956,6 +1162,50 @@ footer {
   </div>
 </section>
 
+<!-- VISI & MISI -->
+<section id="visi-misi" class="visi-misi">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Visi & Misi</span>
+      <h2 class="section-title">Arah & Komitmen Perusahaan</h2>
+      <p class="section-desc">Landasan nilai yang menggerakkan setiap langkah PT Jasa Tirta Luhur dalam menghadirkan air bersih bagi masyarakat Indonesia.</p>
+    </div>
+    <div class="vm-grid">
+      <!-- VISI -->
+      <div class="vm-card">
+        <div class="vm-card-top-border blue"></div>
+        <div class="vm-icon-big blue">
+          <i class="fas fa-eye"></i>
+        </div>
+        <h3>Visi</h3>
+        <p>MENJADI PERUSAHAAN TERBAIK DI INDONESIA DALAM BIDANG PENYEDIAAN AIR BERSIH BAGI GENERASI KITA DI MASA MENDATANG.</p>
+      </div>
+      <!-- MISI -->
+      <div class="vm-card">
+        <div class="vm-card-top-border teal"></div>
+        <div class="vm-icon-big teal">
+          <i class="fas fa-bullseye"></i>
+        </div>
+        <h3>Misi</h3>
+        <ul class="misi-list">
+          <li>
+            <div class="misi-bullet"><i class="fas fa-check"></i></div>
+            <span>MENYEDIAKAN AIR BERSIH DENGAN KUALITAS DAN KUANTITAS TERBAIK SESUAI DENGAN KEBUTUHAN SERTA MENJAGA KELESTARIANNYA.</span>
+          </li>
+          <li>
+            <div class="misi-bullet"><i class="fas fa-check"></i></div>
+            <span>MENJAGA DAN MENINGKATKAN HUBUNGAN BAIK DENGAN MITRA GUNA MENINGKATKAN POTENSI BISNIS PERUSAHAAN.</span>
+          </li>
+          <li>
+            <div class="misi-bullet"><i class="fas fa-check"></i></div>
+            <span>MENCIPTAKAN LINGKUNGAN KERJA YANG PRODUKTIF SEHINGGA DAPAT MENINGKATKAN KOMPETENSI PEGAWAI MENJADI PROFESIONAL YANG BERINTEGRITAS TINGGI DAN PENUH TANGGUNG JAWAB.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- STATS -->
 <section class="stats-section">
   <div class="container">
@@ -963,11 +1213,11 @@ footer {
       <div class="stat-card">
         <div class="stat-icon-wrap"><i class="fas fa-project-diagram"></i></div>
         <div class="stat-value"><span data-target="5">0</span></div>
-        <div class="stat-label"> Aktif</div>
+        <div class="stat-label">Proyek Aktif</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon-wrap"><i class="fas fa-tint"></i></div>
-        <div class="stat-value"><span data-target="543">0</span><span class="stat-unit">L/s</span></div>
+        <div class="stat-value"><span data-target="500">0</span><span class="stat-unit">L/s</span></div>
         <div class="stat-label">Total Kapasitas</div>
       </div>
       <div class="stat-card">
@@ -977,7 +1227,7 @@ footer {
       </div>
       <div class="stat-card">
         <div class="stat-icon-wrap"><i class="fas fa-award"></i></div>
-        <div class="stat-value"><span data-target="7">0</span><span class="+stat-unit">+</span></div>
+        <div class="stat-value"><span data-target="7">0</span><span class="stat-unit">+</span></div>
         <div class="stat-label">Tahun Pengalaman</div>
       </div>
     </div>
@@ -1017,6 +1267,128 @@ footer {
   </div>
 </section>
 
+<!-- MESIN & PERALATAN -->
+<section id="mesin" class="mesin-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Teknologi & Peralatan</span>
+      <h2 class="section-title">Mesin & Peralatan WTP</h2>
+      <p class="section-desc">Peralatan utama yang digunakan dalam proses pengolahan air baku menjadi air bersih berkualitas tinggi sesuai standar nasional.</p>
+    </div>
+    <div class="mesin-grid">
+
+      <!-- POMPA SENTRIFUGAL -->
+      <div class="mesin-card">
+        <div class="mesin-img">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80" alt="Pompa Sentrifugal">
+          <div class="mesin-img-overlay"></div>
+          <div class="mesin-badge">Intake Unit</div>
+        </div>
+        <div class="mesin-body">
+          <span class="mesin-tag">Pompa</span>
+          <h3>Pompa Sentrifugal</h3>
+          <p>Memompa air baku dari sumber sungai atau danau ke bangunan pengolahan dengan debit dan tekanan teratur untuk memulai proses pengolahan.</p>
+          <div class="mesin-specs">
+            <span class="mesin-spec"><i class="fas fa-tint"></i> 10–300 L/detik</span>
+            <span class="mesin-spec"><i class="fas fa-bolt"></i> Motor Listrik</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- UNIT KOAGULASI -->
+      <div class="mesin-card">
+        <div class="mesin-img">
+          <img src="https://images.unsplash.com/photo-1563941402784-f36e84f84e6e?auto=format&fit=crop&w=600&q=80" alt="Unit Koagulasi dan Flokulasi">
+          <div class="mesin-img-overlay"></div>
+          <div class="mesin-badge">Koagulasi</div>
+        </div>
+        <div class="mesin-body">
+          <span class="mesin-tag">Kimia</span>
+          <h3>Unit Koagulasi & Flokulasi</h3>
+          <p>Pengadukan bahan kimia koagulan (tawas/PAC) untuk menggumpalkan partikel koloid dan kotoran halus yang tersuspensi dalam air baku.</p>
+          <div class="mesin-specs">
+            <span class="mesin-spec"><i class="fas fa-cog"></i> Pengaduk mekanik</span>
+            <span class="mesin-spec"><i class="fas fa-flask"></i> Dosing otomatis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BAK SEDIMENTASI -->
+      <div class="mesin-card">
+        <div class="mesin-img">
+          <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=600&q=80" alt="Bak Sedimentasi">
+          <div class="mesin-img-overlay"></div>
+          <div class="mesin-badge">Sedimentasi</div>
+        </div>
+        <div class="mesin-body">
+          <span class="mesin-tag">Pengendapan</span>
+          <h3>Bak Sedimentasi / Clarifier</h3>
+          <p>Mengendapkan flok yang telah terbentuk sehingga air menjadi lebih jernih sebelum memasuki tahap filtrasi lanjutan.</p>
+          <div class="mesin-specs">
+            <span class="mesin-spec"><i class="fas fa-layer-group"></i> Tube settler</span>
+            <span class="mesin-spec"><i class="fas fa-sync"></i> Sludge scraper</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILTER PASIR -->
+      <div class="mesin-card">
+        <div class="mesin-img">
+          <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=600&q=80" alt="Filter Pasir Cepat">
+          <div class="mesin-img-overlay"></div>
+          <div class="mesin-badge">Filtrasi</div>
+        </div>
+        <div class="mesin-body">
+          <span class="mesin-tag">Filtrasi</span>
+          <h3>Filter Pasir Cepat</h3>
+          <p>Menyaring partikel halus yang tersisa menggunakan media pasir dan antrasit berlapis dengan sistem backwash otomatis.</p>
+          <div class="mesin-specs">
+            <span class="mesin-spec"><i class="fas fa-filter"></i> Media multilayer</span>
+            <span class="mesin-spec"><i class="fas fa-redo"></i> Auto backwash</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- UNIT DESINFEKSI -->
+      <div class="mesin-card">
+        <div class="mesin-img">
+          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=600&q=80" alt="Unit Desinfeksi Klorinasi">
+          <div class="mesin-img-overlay"></div>
+          <div class="mesin-badge">Desinfeksi</div>
+        </div>
+        <div class="mesin-body">
+          <span class="mesin-tag">Kimia</span>
+          <h3>Unit Desinfeksi (Klorinasi)</h3>
+          <p>Pembubuhan klorin atau sodium hipoklorit untuk membunuh bakteri, virus, dan mikroorganisme patogen dalam air hasil olahan.</p>
+          <div class="mesin-specs">
+            <span class="mesin-spec"><i class="fas fa-vial"></i> Cl₂ / NaOCl</span>
+            <span class="mesin-spec"><i class="fas fa-sliders-h"></i> Dosis otomatis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL SCADA -->
+      <div class="mesin-card">
+        <div class="mesin-img">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Panel SCADA dan Kontrol">
+          <div class="mesin-img-overlay"></div>
+          <div class="mesin-badge">Kontrol</div>
+        </div>
+        <div class="mesin-body">
+          <span class="mesin-tag">Otomasi</span>
+          <h3>Panel SCADA & Kontrol Otomatis</h3>
+          <p>Sistem pemantauan dan pengendalian proses WTP secara real-time untuk memastikan kualitas air selalu terjaga optimal sepanjang 24 jam.</p>
+          <div class="mesin-specs">
+            <span class="mesin-spec"><i class="fas fa-desktop"></i> HMI Touchscreen</span>
+            <span class="mesin-spec"><i class="fas fa-broadcast-tower"></i> Real-time monitoring</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section id="proyek" class="projects">
   <div class="container">
@@ -1030,7 +1402,7 @@ footer {
         <div class="project-img">
           <img src="marunda.jpeg" alt="Marunda">
           <div class="project-img-overlay"></div>
-          <div class="project-capacity"><i class="fas fa-tint"></i> 33 L/detik</div>
+          <div class="project-capacity"><i class="fas fa-tint"></i> 50 L/detik</div>
         </div>
         <div class="project-body">
           <span class="project-tag">WTP</span>
@@ -1038,7 +1410,7 @@ footer {
           <p>Sistem Penyediaan Air Bersih di kawasan Marunda dengan teknologi modern berkapasitas tinggi.</p>
           <div class="project-meta">
             <span><i class="fas fa-map-marker-alt"></i> Jakarta Utara</span>
-            <span><i class="fas fa-calendar-alt"></i> 2018</span>
+            <span><i class="fas fa-calendar-alt"></i> 2020</span>
           </div>
         </div>
       </div>
@@ -1046,7 +1418,7 @@ footer {
         <div class="project-img">
           <img src="pamanukan.jpeg" alt="Pamanukan">
           <div class="project-img-overlay"></div>
-          <div class="project-capacity"><i class="fas fa-tint"></i> 110 L/detik</div>
+          <div class="project-capacity"><i class="fas fa-tint"></i> 100 L/detik</div>
         </div>
         <div class="project-body">
           <span class="project-tag">WTP</span>
@@ -1054,7 +1426,7 @@ footer {
           <p>Instalasi pengolahan air berskala besar melayani ribuan pelanggan di wilayah Subang dan sekitarnya.</p>
           <div class="project-meta">
             <span><i class="fas fa-map-marker-alt"></i> Subang, Jawa Barat</span>
-            <span><i class="fas fa-calendar-alt"></i> 2020</span>
+            <span><i class="fas fa-calendar-alt"></i> 2022</span>
           </div>
         </div>
       </div>
@@ -1062,7 +1434,7 @@ footer {
         <div class="project-img">
           <img src="kota-baru-parahyangan.jpg" alt="Kota Baru Parahyangan">
           <div class="project-img-overlay"></div>
-          <div class="project-capacity"><i class="fas fa-tint"></i> 50 L/detik</div>
+          <div class="project-capacity"><i class="fas fa-tint"></i> 100 L/detik</div>
         </div>
         <div class="project-body">
           <span class="project-tag">WTP</span>
@@ -1070,24 +1442,24 @@ footer {
           <p>Sistem pengolahan air terpadu untuk kawasan perumahan modern berskala kota di Bandung Barat.</p>
           <div class="project-meta">
             <span><i class="fas fa-map-marker-alt"></i> Bandung Barat</span>
-            <span><i class="fas fa-calendar-alt"></i> 2021</span>
+            <span><i class="fas fa-calendar-alt"></i> 2025</span>
           </div>
         </div>
       </div>
       <div class="project-card">
         <div class="project-img">
-          <img src="biki2.jpeg" alt="BIKI ">
+          <img src="biki2.jpeg" alt="BIKI">
           <div class="project-img-overlay"></div>
-          <div class="project-capacity"><i class="fas fa-tint"></i> 300 L/detik</div>
+          <div class="project-capacity"><i class="fas fa-tint"></i> 220 L/detik</div>
         </div>
         <div class="project-body">
           <span class="project-tag">WTP</span>
-          <h3>BIKI </h3>
+          <h3>BIKI</h3>
           <p>Proyek pengolahan air terbesar dalam portofolio perusahaan, melayani kawasan industri Purwakarta.</p>
           <div class="project-meta">
             <span><i class="fas fa-map-marker-alt"></i> Purwakarta</span>
-            <span><i class="fas fa-calendar-alt"></i> 2022</span>
-              </div>
+            <span><i class="fas fa-calendar-alt"></i> 2021</span>
+          </div>
         </div>
       </div>
       <div class="project-card">
@@ -1099,9 +1471,9 @@ footer {
         <div class="project-body">
           <span class="project-tag">WTP</span>
           <h3>Curug</h3>
-          <p>Sistem pengolahan air terpadu untuk kawasan curug.</p>
+          <p>Sistem pengolahan air terpadu untuk kawasan Curug dengan kapasitas yang handal dan efisien.</p>
           <div class="project-meta">
-            <span><i class="fas fa-map-marker-alt"></i> WTP Curug</span>
+            <span><i class="fas fa-map-marker-alt"></i> Karawang/span>
             <span><i class="fas fa-calendar-alt"></i> 2021</span>
           </div>
         </div>
@@ -1212,7 +1584,9 @@ footer {
         <h4>Navigasi</h4>
         <ul>
           <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="#visi-misi">Visi & Misi</a></li>
           <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#mesin">Mesin & Peralatan</a></li>
           <li><a href="#proyek">Proyek</a></li>
           <li><a href="#kontak">Kontak</a></li>
         </ul>
@@ -1312,7 +1686,7 @@ function handleSubmit(e) {
 }
 
 // Scroll reveal
-const reveals = document.querySelectorAll('.service-card, .project-card, .about-grid, .contact-wrapper');
+const reveals = document.querySelectorAll('.service-card, .project-card, .about-grid, .contact-wrapper, .vm-card, .mesin-card');
 reveals.forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
